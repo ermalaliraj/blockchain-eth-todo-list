@@ -16,7 +16,7 @@ New RPC URL: HTTP://127.0.0.1:7545
 Chain Id: 5777
 ```
 
-##### Compile & Migrate/Deploy smart contract to the blockchain
+#### Compile & Migrate/Deploy smart contract to the blockchain
 ```
 npm install
 truffle init
@@ -24,7 +24,7 @@ truffle compile
 truffle migrate
 ```
 
-##### Console
+#### Console
 ```
 ⚠️  Important ⚠️
 If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
@@ -83,13 +83,13 @@ Summary
 > Final cost:          0.00589408 ETH
 ```
 
-##### Ganache in Local
+#### Ganache in Local
 Deploying smart contract to the blockchain costs ethereum (gas). That's why the balance of the crypto currency has go down with 0.01 ETH.
 Truffle by default uses the first account inside this wallet to pay those fees. 
 <img src="./doc/ganache.JPG" width="80%" height="auto">
 
 
-##### Retrieve smart contracts
+#### Retrieve smart contracts
 ```
 truffle console
 todoLost = await TodoList.deployed()
