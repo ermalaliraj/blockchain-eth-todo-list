@@ -105,7 +105,7 @@ task.content
 ####  Run web app
 Copy from Ganache the private key and import it in the wallet.
 
-<img src="./doc/import_into_private_wallet.png" width="80%" height="auto">
+<img src="./doc/import_into_private_wallet.png" width="30%" height="auto">
 
 ```
 npm run dev
