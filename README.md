@@ -85,4 +85,4 @@ Publishing of a contract requires gas thats why 0.01 ETH less.
 
 
 ### Links
-[Ganache - Personal Ethereum blockchain used to run tests, execute commands in local](https://trufflesuite.com/ganache/)````
+[Ganache - Personal Ethereum blockchain used to run tests, execute commands in local](https://trufflesuite.com/ganache/)
