@@ -14,8 +14,8 @@ npm install -g truffle@5.0.2
 
 
 ##### Compile & Migrate smart contract
-`````
-npm install``
+```
+npm install
 truffle compile
 truffle migrate
 ```
@@ -85,4 +85,4 @@ Publishing of a contract requires gas thats why 0.01 ETH less.
 
 
 ### Links
-[Ganache - Personal Ethereum blockchain used to run tests, execute commands in local](https://trufflesuite.com/ganache/)
+[Ganache - Personal Ethereum blockchain used to run tests, execute commands in local](https://trufflesuite.com/ganache/)````
