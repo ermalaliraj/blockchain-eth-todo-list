@@ -8,18 +8,19 @@ npm install --g --production windows-build-tools  (as admin)
 npm install -g truffle@5.0.2
 ```
 
-(2) Download Truffle Suite Ganache https://trufflesuite.com/ganache/
+(2) Download Truffle Suite Ganache https://trufflesuite.com/ganache/ <br/>
+
 (3) Add Metamask plugin in chrome
 
 
-### Compile 
-```
-npm install
+##### Compile & Migrate smart contract
+`````
+npm install``
 truffle compile
 truffle migrate
 ```
 
-
+##### Console
 ```
 ⚠️  Important ⚠️
 If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
@@ -78,10 +79,9 @@ Summary
 > Final cost:          0.00589408 ETH
 ```
 
-
-<img src="./doc/ganache.JPG" width="60%" height="auto">
-
-
+##### Ganache in Local
+Publishing of a contract requires gas thats why 0.01 ETH less.
+<img src="./doc/ganache.JPG" width="80%" height="auto">
 
 
 ### Links
