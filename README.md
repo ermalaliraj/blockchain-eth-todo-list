@@ -6,14 +6,18 @@
 cd C:\Users\admin\Documents\Projects\softup\eth-todo-list
 npm install --g --production windows-build-tools  (as admin)
 npm install -g truffle@5.0.2
+npm install web3
 ```
 
 (2) Download Truffle Suite Ganache https://trufflesuite.com/ganache/ <br/>
 
-(3) Add Metamask plugin in chrome
+(3) Add Metamask plugin in chrome and create a private network with the following details:
+```
+New RPC URL: HTTP://127.0.0.1:7545
+Chain Id: 5777
+```
 
-
-##### Compile & Migrate smart contract
+##### Compile & Migrate/Deploy smart contract to the blockchain
 ```
 npm install
 truffle compile
@@ -80,9 +84,34 @@ Summary
 ```
 
 ##### Ganache in Local
-Publishing of a contract requires gas thats why 0.01 ETH less.
+Deploying smart contract to the blockchain costs ethereum (gas). That's why the balance of the crypto currency has go down with 0.01 ETH.
+Truffle by default uses the first account inside this wallet to pay those fees. 
 <img src="./doc/ganache.JPG" width="80%" height="auto">
 
 
+##### Retrieve smart contracts
+```
+truffle console
+todoLost = await TodoList.deployed()
+truffle(development)> todoList.address
+truffle(development)> taskCount = await todoList.taskCount()
+truffle(development)> taskCount.toNumber()
+
+task = await todoList.tasks(1)
+task
+task.content
+```
+
+####  Run web app
+Copy from Ganache the private key and import it in the wallet.
+
+<img src="./doc/import_into_private_wallet.JPG" width="80%" height="auto">
+
+```
+npm run dev
+```
+
+
 ### Links
-[Ganache - Personal Ethereum blockchain used to run tests, execute commands in local](https://trufflesuite.com/ganache/)
+- [Ganache - Personal Ethereum blockchain used to run tests, execute commands in local](https://trufflesuite.com/ganache/)
+- [Youtube tutorial](https://www.youtube.com/watch?v=coQ5dg8wM2o)
