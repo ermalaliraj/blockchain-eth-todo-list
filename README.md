@@ -6,7 +6,6 @@
 cd C:\Users\admin\Documents\Projects\softup\eth-todo-list
 npm install --g --production windows-build-tools  (as admin)
 npm install -g truffle@5.0.2
-npm install web3
 ```
 
 (2) Download Truffle Suite Ganache https://trufflesuite.com/ganache/ <br/>
@@ -20,6 +19,7 @@ Chain Id: 5777
 ##### Compile & Migrate/Deploy smart contract to the blockchain
 ```
 npm install
+truffle init
 truffle compile
 truffle migrate
 ```
