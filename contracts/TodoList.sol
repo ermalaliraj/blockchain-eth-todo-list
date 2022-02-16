@@ -19,7 +19,10 @@ contract TodoList {
     function createTask(string memory _content) public {
         taskCount ++;
         tasks[taskCount] = Task(taskCount, _content, false);
+    }
 
+    function toggleCompleted(uint _id) public {
+        tasks[_id].completed = !tasks[_id].completed;
     }
 
 }

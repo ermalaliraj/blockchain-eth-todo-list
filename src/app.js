@@ -122,10 +122,14 @@ App = {
     },
 
     toggleCompleted: async (e) => {
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
         App.setLoading(true)
         const taskId = e.target.name
-        task = await App.todoList.tasks(1)
-        App.todoList.tasks(1).completed = !task
+        // task = await App.todoList.tasks(1)
+        await App.todoList.toggleCompleted(taskId)
+        // task = await App.todoList.tasks(1)
+        // App.todoList.tasks(1).completed = !task
         // todoList.toggleCompleted(taskId)
         console.log("Toggle taskId: " + taskId)
         window.location.reload()
