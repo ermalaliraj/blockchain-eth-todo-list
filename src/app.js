@@ -85,7 +85,7 @@ App = {
 
         for (var i = 1; i <= taskCount; i++) {
             const task = await App.todoList.tasks(i)
-            console.log("task[" + i + "]" + task)
+            console.log("task[" + i + "] - " + task)
             const taskId = task[0].toNumber()
             const taskContent = task[1]
             const taskCompleted = task[2]

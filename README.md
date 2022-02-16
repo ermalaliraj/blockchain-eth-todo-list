@@ -22,6 +22,8 @@ npm install
 truffle init
 truffle compile
 truffle migrate
+
+truffle migrate --rest (on contract change)
 ```
 
 #### Console
