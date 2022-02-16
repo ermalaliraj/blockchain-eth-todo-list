@@ -28,11 +28,12 @@ App = {
             } catch (error) {
                 console.warn("User denied account access...")
             }
+            console.log("Connected to the Metamask")
         } else if (window.web3) {  // Legacy browsers...
             App.web3Provider = web3.currentProvider
             window.web3 = new Web3(web3.currentProvider)
-            // Accounts always exposed
             web3.eth.sendTransaction({/* ... */})
+            console.log("Old browser. Connected")
         } else {
             console.log('Non-Ethereum browser detected. You should consider trying MetaMask!')
         }
@@ -41,13 +42,15 @@ App = {
     loadAccount: async () => {
         // Set the current blockchain account
         App.account = web3.eth.accounts[0]
-        console.log(App.account)
+        console.log("Account: " + App.account)
     },
 
     loadContract: async () => {
         // Create a JavaScript version of the smart contract
         const todoList = await $.getJSON('TodoList.json')
+        console.log("todoList as json")
         console.log(todoList)
+
         App.contracts.TodoList = TruffleContract(todoList)
         App.contracts.TodoList.setProvider(App.web3Provider)
 
@@ -77,10 +80,12 @@ App = {
     renderTasks: async () => {
         // Load the total task count from the blockchain
         const taskCount = await App.todoList.taskCount()
+        console.log("taskCount: " + taskCount)
         const $taskTemplate = $('.taskTemplate')
 
         for (var i = 1; i <= taskCount; i++) {
             const task = await App.todoList.tasks(i)
+            console.log("task[" + i + "]" + task)
             const taskId = task[0].toNumber()
             const taskContent = task[1]
             const taskCompleted = task[2]
@@ -108,7 +113,9 @@ App = {
     createTask: async () => {
         App.setLoading(true)
         const content = $('#newTask').val()
+        console.log("Going to create a task in blockchain: " + content)
         await App.todoList.createTask(content)
+        console.log("Task created")
         window.location.reload()
     },
 
@@ -116,6 +123,7 @@ App = {
         App.setLoading(true)
         const taskId = e.target.name
         await App.todoList.toggleCompleted(taskId)
+        console.log("Toggle taskId: " + taskId)
         window.location.reload()
     },
 
