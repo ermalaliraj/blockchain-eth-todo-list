@@ -111,6 +111,8 @@ App = {
     },
 
     createTask: async () => {
+        web3.eth.defaultAccount = web3.eth.accounts[0];  // Solved: "Error: invalid address"  issue
+
         App.setLoading(true)
         const content = $('#newTask').val()
         console.log("Going to create a task in blockchain: " + content)
@@ -122,7 +124,9 @@ App = {
     toggleCompleted: async (e) => {
         App.setLoading(true)
         const taskId = e.target.name
-        await App.todoList.toggleCompleted(taskId)
+        task = await App.todoList.tasks(1)
+        App.todoList.tasks(1).completed = !task
+        // todoList.toggleCompleted(taskId)
         console.log("Toggle taskId: " + taskId)
         window.location.reload()
     },

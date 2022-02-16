@@ -92,7 +92,7 @@ Truffle by default uses the first account inside this wallet to pay those fees.
 #### Retrieve smart contracts
 ```
 truffle console
-todoLost = await TodoList.deployed()
+todoList = await TodoList.deployed()
 truffle(development)> todoList.address
 truffle(development)> taskCount = await todoList.taskCount()
 truffle(development)> taskCount.toNumber()
@@ -100,6 +100,9 @@ truffle(development)> taskCount.toNumber()
 task = await todoList.tasks(1)
 task
 task.content
+
+
+todoList.createTask("Second contract...")
 ```
 
 ####  Run web app
